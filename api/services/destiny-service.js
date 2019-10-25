@@ -5,7 +5,7 @@ class DestinyService {
    constructor( ) {
       this.axiosClient = axios.create({
          baseURL: 'https://www.bungie.net/Platform',
-         timeout: 1000,
+         timeout: 5000,
          headers: {'X-API-Key': process.env.DESTINY_API_KEY}
       })
    }
@@ -19,7 +19,7 @@ class DestinyService {
    }
 
    getProfile( destinyMembershipId, membershipType) {
-      return this.axiosClient.get('/Destiny2/1/Profile/4611686018429730113/')
+      return this.axiosClient.get('/Destiny2/1/Profile/4611686018429730113?components=100')
    }
 
 }
