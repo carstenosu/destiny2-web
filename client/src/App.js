@@ -22,7 +22,13 @@ class App extends Component {
 
   render() {
     return (
-      <Grid container spacing="0" direction="column" justify="center" alignItems="center">
+      <Grid container 
+            spacing="0" 
+            direction="column" 
+            justify="center" 
+            alignItems="center"
+            style={{ minHeight: '100vh' }}
+          >
         <Grid item xs="3">
           <PlayerSearch/>
         </Grid>

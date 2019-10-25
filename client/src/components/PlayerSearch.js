@@ -13,7 +13,6 @@ export default function PlayerSearch() {
       <form noValidate autoComplete="off">
          <TextField
             id="name"
-            label="Name"
             value={name}
             onChange={handleChange}
             margin="normal"
