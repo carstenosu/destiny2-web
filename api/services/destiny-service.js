@@ -14,12 +14,12 @@ class DestinyService {
       return this.axiosClient.get('/Destiny2/Manifest/');
    }
 
-   searchDestinyPlayer() {
-      return this.axiosClient.get('/Destiny2/SearchDestinyPlayer/1/carsten/');
+   searchDestinyPlayer( name ) {
+      return this.axiosClient.get(`/Destiny2/SearchDestinyPlayer/1/${name}/`);
    }
 
    getProfile( destinyMembershipId, membershipType) {
-      return this.axiosClient.get('/Destiny2/1/Profile/4611686018429730113?components=100')
+      return this.axiosClient.get(`/Destiny2/${membershipType}/Profile/${destinyMembershipId}?components=100`)
    }
 
 }
