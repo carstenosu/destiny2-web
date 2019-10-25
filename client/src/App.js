@@ -1,40 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { Grid } from "@material-ui/core/";
 import PlayerSearch from './components/PlayerSearch';
 
-class App extends Component {
+export default function App() {
 
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-  }
-
-  callAPI() {
-    fetch("http://localhost:9000/destiny")
-        .then(res => res.text())
-        .then(res => this.setState({ apiResponse: res }));
-  }
-
-  componentWillMount() {
-    this.callAPI();
-  }
-
-  render() {
-    return (
-      <Grid container 
-            spacing="0" 
-            direction="column" 
-            justify="center" 
-            alignItems="center"
-            style={{ minHeight: '100vh' }}
-          >
-        <Grid item xs="3">
-          <PlayerSearch/>
-        </Grid>
+  return (
+    <Grid container 
+          spacing={0} 
+          direction="column" 
+          justify="center" 
+          alignItems="center"
+          style={{ minHeight: '100vh' }}
+        >
+      <Grid item xs={3}>
+        <PlayerSearch/>
       </Grid>
-    )
-  }
+    </Grid>
+  )
 }
-
-export default App;
